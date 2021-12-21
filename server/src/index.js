@@ -4,7 +4,7 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 import mysql from "mysql2/promise";
 
-import {creatTableUsers, creatTableTutorials} from "./utils/creat-tables.js";
+import {creatTableUsers, creatTableGroups, creatTableBills, creatTableAccounts} from "./utils/creat-tables.js";
 
 dotenv.config();
 
@@ -40,7 +40,9 @@ const main = async () => {
         console.log("Mysql connected successfull");
      
         await creatTableUsers(connection);
-        await creatTableTutorials(connection);
+        await creatTableGroups(connection);
+        await creatTableBills(connection);
+        await creatTableAccounts(connection);
  
         app.use("/auth", userRouter);
 
