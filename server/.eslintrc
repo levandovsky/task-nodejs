@@ -1,0 +1,18 @@
+{
+    "extends": ["eslint:recommended", "prettier"],
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "sourceType": "module",
+        "requireConfigFile": false
+    },
+    "rules": {
+	"quotes": ["error", "double", "backtick"],
+        "indent": ["error", 4],
+        "semi": ["error", "always"],
+        "max-len": ["warn", {"code": 180, "comments": 200}]
+    }
+}
