@@ -1,8 +1,8 @@
 import {BASE_URL, displayMessage} from "./tools.js"
 
 const formElement = document.getElementById("js-form-register");
-const containerGroupId = document.getElementById("container-group_id");
-containerGroupId.hidden = true;
+// const containerGroupId = document.getElementById("container-group_id");
+// containerGroupId.hidden = true;
 
 // id, name
 const getBills = async () => {
@@ -66,7 +66,7 @@ formElement.addEventListener('submit', async (event) => {
         displayMessage(`Error: ${rez.errors[0].msg}, ${rez.errors[0].param}`, false); 
     }
     else{
-        displayMessage(`Your group added successfully`, true); 
+        displayMessage(`Your bill added successfully`, true); 
     }
     getAndDisplayBills();
 });
