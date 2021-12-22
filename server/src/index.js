@@ -7,9 +7,9 @@ import mysql from "mysql2/promise";
 import {creatTableUsers, creatTableGroups, creatTableBills, creatTableAccounts} from "./utils/creat-tables.js";
 import userRouter from "./routes/users-route.js";
 import accountsRouter from "./routes/accounts-route.js";
+import billsRouter from "./routes/bills-route.js";
 
 dotenv.config();
-
 
 const main = async () => {
     try {
@@ -48,7 +48,7 @@ const main = async () => {
  
         app.use("/auth", userRouter);
         app.use("/accounts", accountsRouter);
-
+        app.use("/bills", billsRouter);
         
         app.listen(PORT, () => {
             console.log(`App runnig on: http://localhost/${PORT}`);

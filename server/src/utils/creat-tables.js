@@ -3,7 +3,6 @@ export const GROUPS_TABLE = "groups";
 export const BILLS_TABLE = "bills";
 export const ACCOUNTS_TABLE = "accounts";
 
-
 const sqlCreatTableUsers =`
 CREATE TABLE IF NOT EXISTS ${USERS_TABLE} (
     id int NOT NULL AUTO_INCREMENT,

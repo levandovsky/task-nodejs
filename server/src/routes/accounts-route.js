@@ -5,8 +5,7 @@ import { sendError } from "../utils/error.js";
 import {validateErrorsMidleware} from "../utils/validateErrorsMidleware.js"
 import { loggedInValidator } from "../utils/validators.js";
 
-import {GROUPS_TABLE} from "../utils/creat-tables.js"
-import {ACCOUNTS_TABLE} from "../utils/creat-tables.js"
+import {GROUPS_TABLE, ACCOUNTS_TABLE} from "../utils/creat-tables.js"
 
 const router = Router();    
 
@@ -78,3 +77,4 @@ router.post("/",
     });
  
     export default router;
+    
