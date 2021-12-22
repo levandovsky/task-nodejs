@@ -117,9 +117,17 @@ const logInSignUpUser = async (signUp) => {
             else{
                 elementMessage.innerHTML = ``;
             }
-            
+            const userObject = {
+                full_name: formData.get('full_name'),
+                email: formData.get('email'),
+                password: formData.get('password')
+            };
             const rez = await signUpUser(userObject);
         }else{
+            const userObject = {
+                email: formData.get('email'),
+                password: formData.get('password')
+            };
             const rez = await logInUser(userObject);
         }
         
@@ -159,7 +167,7 @@ const displayGroups = (tutorials) => {
         
         const tutorialTitle = document.createElement('H1');
         tutorialTitle.className = 'is-size-6';
-        tutorialTitle.innerHTML = `${tutorial.id}`;
+        tutorialTitle.innerHTML = `ID: ${tutorial.id}`;
         
        
         const tutorialContent = document.createElement('p');

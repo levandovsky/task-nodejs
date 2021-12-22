@@ -23,7 +23,7 @@ router.get("/",
             const [groups] = await mysql.query(query, [user_id]);
             
             res.status(200).send({groups});
-            console.log(groups);
+            // console.log(groups);
         } catch (error) {
             sendError(error, res);
         }
