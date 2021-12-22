@@ -56,6 +56,8 @@ router.post("/login",
     const {mysql} = req.app;
     const {email, password} = req.body;
     
+    
+    
     try {
         const query = `SELECT * FROM ${USERS_TABLE} WHERE email = ?`;
         const [[user]] = await mysql.query(query, [email]);
