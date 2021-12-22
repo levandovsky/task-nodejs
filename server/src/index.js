@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import mysql from "mysql2/promise";
 
 import {creatTableUsers, creatTableGroups, creatTableBills, creatTableAccounts} from "./utils/creat-tables.js";
+import userRouter from "./routes/users-route.js";
+import accountsRouter from "./routes/accounts-route.js";
 
 dotenv.config();
 
@@ -45,6 +47,7 @@ const main = async () => {
         await creatTableAccounts(connection);
  
         app.use("/auth", userRouter);
+        app.use("/accounts", accountsRouter);
 
         
         app.listen(PORT, () => {

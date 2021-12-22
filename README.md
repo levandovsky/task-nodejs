@@ -36,7 +36,8 @@ Naujà ðakà galima susikurti ávykdþius `git checkout -b dev` komandà terminale.
 
 3. Kuriant sistemà pakeitimus nuolatos saugoti su pakeitimus su prasmingomis "commit" þinutëmis.
 
-4. Pabaigus projektà patikrinti ar visi pakeitimai yra nusiøsti á GitHub, sukurti Pull Request per GitHub puslapá á pagrindinæ ðakà (`main` arba `master`) ir pateikti nuorodà ðiame "assignment".
+4. Pabaigus projektà patikrinti ar visi pakeitimai yra nusiøsti á GitHub, sukurti Pull Request per GitHub puslapá á 
+pagrindinæ ðakà (`main` arba `master`) ir pateikti nuorodà ðiame "assignment".
 
 Jeigu to padaryti nepavyks galite tiesiog ákelti archyvuotus failus.
 
