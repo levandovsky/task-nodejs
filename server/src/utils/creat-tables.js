@@ -31,7 +31,7 @@ const sqlCreatTableBills =`
     description text COLLATE utf8_unicode_ci,
     PRIMARY KEY (id),
     KEY group_id_idx (group_id),
-    CONSTRAINT group_id FOREIGN KEY (group_id) REFERENCES groups (id)
+    CONSTRAINT group_id FOREIGN KEY (group_id) REFERENCES \`groups\` (id)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;`
   ;
 
@@ -43,11 +43,10 @@ const sqlCreatTableAccounts =`
     PRIMARY KEY (id),
     KEY group_id_idx (group2_id),
     KEY user_id_idx (user_id),
-    CONSTRAINT group2_id FOREIGN KEY (group2_id) REFERENCES groups (id),
+    CONSTRAINT group2_id FOREIGN KEY (group2_id) REFERENCES \`groups\` (id),
     CONSTRAINT user_id FOREIGN KEY (user_id) REFERENCES users (id)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;`
 ;
-
 
 export const creatTableUsers = async (connection) => {
     await connection.query (sqlCreatTableUsers);

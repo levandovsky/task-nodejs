@@ -43,6 +43,8 @@ const main = async () => {
      
         await creatTableUsers(connection);
         await creatTableGroups(connection);
+        await creatTableBills(connection);
+        await creatTableAccounts(connection);
  
         app.use("/auth", userRouter);
         app.use("/accounts", accountsRouter);
