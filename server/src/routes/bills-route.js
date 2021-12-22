@@ -17,7 +17,7 @@ router.get("/id/:id",
         const group_id = Number(req.params.id);
         
         try {
-            const query = `SELECT amount, description FROM ${BILLS_TABLE} 
+            const query = `SELECT id, amount, description FROM ${BILLS_TABLE} 
             WHERE group_id = ?`;
             
             const [bills] = await mysql.query(query, [group_id]);

@@ -164,6 +164,10 @@ const displayGroups = (tutorials) => {
         
         const tutorialElementChild = document.createElement('div');
         tutorialElementChild.className = 'box';
+        tutorialElementChild.addEventListener('click', async (event) => {
+            sessionStorage.setItem("group_id", tutorial.id);
+            window.location.href = "add-bill.html";
+        })
         
         const tutorialTitle = document.createElement('H1');
         tutorialTitle.className = 'is-size-6';
