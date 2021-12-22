@@ -17,7 +17,7 @@ router.get("/",
         
         try {
             const query = `SELECT gr.id, gr.name FROM ${ACCOUNTS_TABLE} ac
-                LEFT JOIN ${GROUPS_TABLE} gr ON ac.group_id = gr.id
+                LEFT JOIN \`${GROUPS_TABLE}\` gr ON ac.group2_id = gr.id
             WHERE ac.user_id = ?`;
             
             const [groups] = await mysql.query(query, [user_id]);
@@ -36,10 +36,8 @@ router.get("/groups",
         const {user_id} = req.token;
         
         try {
-            const query = `SELECT gr.id, gr.name FROM ${ACCOUNTS_TABLE} ac
-                LEFT JOIN ${GROUPS_TABLE} gr ON ac.group_id = gr.id
-            WHERE ac.user_id <> ?`;
-            
+            const query = `SELECT gr.id, gr.name FROM \`${GROUPS_TABLE}\` gr WHERE gr.id NOT IN (SELECT ac.group2_id FROM ${ACCOUNTS_TABLE} ac WHERE ac.user_id = ?)`;
+             
             const [groups] = await mysql.query(query, [user_id]);
             
             res.status(200).send({groups});
@@ -63,7 +61,7 @@ router.post("/",
             
             // insertedId - objektas su insertId, affectedRows ir t.t. properties:
             const [{insertId}] = await mysql.query(`
-            INSERT INTO ${ACCOUNTS_TABLE} (group_id, user_id) VALUES(?, ?)
+            INSERT INTO ${ACCOUNTS_TABLE} (group2_id, user_id) VALUES(?, ?)
             `, [group_id, user_id]);
             
             res.status(200).send({

@@ -1,3 +1,9 @@
+// {"full_name": "Test01 Test01",
+//  "password": "12345678",
+//  "email": "test01@emai.com"
+// }
+
+
 import {Router} from 'express';
 import {body} from "express-validator";
 import bcrypt from "bcrypt";
@@ -25,16 +31,15 @@ router.post("/register",
         const {mysql} = req.app;
         
         try {
-            const {email, password} = await userInfoSchema.validateAsync(req.body);
+            const {full_name, email, password} = await userInfoSchema.validateAsync(req.body);
             const hashed = await bcrypt.hash(password, 10);
-            const query = `INSERT INTO ${USERS_TABLE} (email, password) VALUES (?, ?);`;
+            const query = `INSERT INTO ${USERS_TABLE} (full_name, email, password) VALUES (?, ?, ?);`;
     
-            await mysql.query(query, [email, hashed]);
+            await mysql.query(query, [full_name, email, hashed]);
             
             res.send({
                 registered: email,
             });
-     
             
         } catch (error) {
             sendError(error, res);
