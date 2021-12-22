@@ -180,7 +180,7 @@ const displayGroups = (tutorials) => {
     });
 }
 
-const getAndDisplayTutorials = async () => {
+const getAndDisplayGroups = async () => {
     const groups = await getGroups();
     console.log(groups);
     console.log(groups.groups);
@@ -198,4 +198,4 @@ buttomLogIn.onclick = (event) =>{
     logInSignUpUser(0);
 }
 
-getAndDisplayTutorials();
+getAndDisplayGroups();
