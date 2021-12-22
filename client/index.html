@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atsiskaitymas NodeJS</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script type="module" src="./js/index.js" defer></script>
+</head>
+<body>
+    <section class="container p-3">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-end">
+                <div class="navbar-item ">
+                    <div class="buttons ">
+                        <a id = "button-sign-up" class="button is-primary">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a id = "button-log-in" class="button is-light">
+                            Log in
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id = "notification-wrapper"></div>
+        <div class="hero is-primary">
+            <div class="has-background-primary py-5 hero-body is-primary">
+                <div class="mx-5 is-primary ">
+                    <p class="is-size-3">List groups</p>
+                    <p class=""</p>
+                </div>
+            </div>
+        </div>
+        <div class="has-text-right py-5 px-6">
+            <a id="btn04" class="button is-primary is-small ml-6" href="add-group.html">Add Groups</a>
+        </div>
+        <div class="ml-5 px-6">
+            <div class="columns is-multiline js-tutorials-wrapper">
+
+            </div>
+        </div>
+    </section>
+    <div class="modal py-6" id = "user-modal">
+        <div class="modal-background">
+            <div class="modal-content mt-6">
+                <div class="ml-5 py-5 px-6 has-background-light">
+                    <p id="sign-up-text" class="has-text-primary is-size-4 py-2">Sign up</p>
+                    <form id="js-form-register">
+                        <div class="field" id = "container-fullname">
+                            <label class="label" for="modal-fullname">Full name</label>
+                            <div class="control">
+                                <input id = "modal-fullname" class="input" type="text" placeholder="Jon Jonson" name="full_name">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" for="modal-email">E-mail</label>
+                            <div class="control">
+                                <input id = "modal-email" class="input" type="email" placeholder="jon@email.com" name="email">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label is-fullwidth" for="modal-password">Password</label>
+                            <div class="control">
+                                <input id = "modal-password" class="input" type="password" placeholder="Very strong password" name="password">
+                            </div>
+                        </div>
+                        <div class="field" id = "container-confirm_password">
+                            <label class="label is-fullwidth" for="modal-confirm_password">Confirm Password</label>
+                            <div class="control">
+                                <input id = "modal-confirm_password" class="input" type="password" placeholder="Confirm Password" name="confirm_password">
+                                <span id='modal-message'></span>
+                            </div>
+                        </div>
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button class="js-modal-cancel button is-primary">Cancel</button>
+                            </div>
+                            <div class="control">
+                                <button id= "modal-submit-button" class="button is-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+</body>
+</html>

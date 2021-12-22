@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namų darbas 47  Fetch POST</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script type = "module" src="./js/add-bill.js" defer></script>
+</head>
+<body>
+    <section class="container p-3">
+        <div id = "notification-wrapper"></div>
+        <div class="hero is-primary mt-3 ">
+            <div class="has-background-primary py-5 hero-body is-primary">
+                <div class="mx-5 is-primary ">
+                    <p class="is-size-3">Add new bill</p>
+                </div>
+            </div>
+        </div>
+        <div class="my-1 px-6 py-1">
+            
+            <div class="has-text-right">
+                <a id="btn04" class="button is-primary is-small mr-6" href="index.html">Your groups</a>
+            </div>
+        </div>
+        
+        <div class="ml-5 px-6">
+            <div class="columns is-multiline js-tutorials-wrapper">
+
+            </div>
+        </div>
+        
+        <div class="mt-5 ml-5 px-6">
+            <form id="js-form-register">
+                <div class="field">
+                    <label class="label" for="amount">Amount</label>
+                    <div class="control">
+                        <input step="0.01" class="input" type="number" placeholder="15" id="amount" name="amount">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" for="description">Description</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Description" id="description" name="description">
+                    </div>
+                </div>
+               <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
